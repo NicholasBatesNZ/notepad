@@ -1,0 +1,11 @@
+{
+    "id" : "notepad",
+    "version" : "0.1.0",
+    "displayName" : "notepad Faction",
+    "description" : "Content related to notepad Faction.",
+    "dependencies" :  [
+        {
+            "id" : "core"
+        }
+    ]
+}
