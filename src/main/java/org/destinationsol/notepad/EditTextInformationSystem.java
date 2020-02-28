@@ -15,12 +15,13 @@
  */
 package org.destinationsol.notepad;
 
-import org.destinationsol.entitysystem.EventReceiver;
+import org.destinationsol.entitysystem.RegisterEventReceivers;
 import org.terasology.gestalt.entitysystem.entity.EntityRef;
 import org.terasology.gestalt.entitysystem.event.EventResult;
 import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 
-public class EditTextInformationSystem implements EventReceiver {
+@RegisterEventReceivers
+public class EditTextInformationSystem {
 
     @ReceiveEvent(components = TextInformation.class)
     public EventResult onEditTextInformation(EditTextInformationEvent event, EntityRef entity) {
