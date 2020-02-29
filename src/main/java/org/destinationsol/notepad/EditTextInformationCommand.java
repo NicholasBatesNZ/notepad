@@ -15,6 +15,8 @@
  */
 package org.destinationsol.notepad;
 
+import com.google.common.collect.Iterators;
+import org.destinationsol.assets.Assets;
 import org.destinationsol.common.In;
 import org.destinationsol.entitysystem.EntitySystemManager;
 import org.destinationsol.game.console.annotations.Command;
@@ -36,7 +38,7 @@ public class EditTextInformationCommand {
     @Command(shortDescription = "Displays the text stored under Notepad entity.")
     public String getTextInformation() {
         StringBuilder response = new StringBuilder();
-        EntityIterator iterator = entitySystemManager.getEntities(new TextInformation());
+        EntityIterator iterator = entitySystemManager.getEntityManager().iterate(new TextInformation());
         while (iterator.next()) {
             if (iterator.getEntity().getComponent(TextInformation.class).isPresent()) {
                 response.append(iterator.getEntity().getComponent(TextInformation.class).get().getInformation());
