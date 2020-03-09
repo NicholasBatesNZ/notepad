@@ -19,6 +19,7 @@ import org.destinationsol.assets.Assets;
 import org.destinationsol.common.In;
 import org.destinationsol.entitysystem.ComponentSystem;
 import org.destinationsol.entitysystem.EntitySystemManager;
+import org.terasology.gestalt.entitysystem.entity.EntityIterator;
 
 public class TextInformationSystem extends ComponentSystem {
 
@@ -27,6 +28,12 @@ public class TextInformationSystem extends ComponentSystem {
 
     @Override
     public void preBegin() {
+        EntityIterator iterator = entitySystemManager.getEntityManager().iterate(new TextInformation());
+        while (iterator.next()) {
+            if (iterator.getEntity().getComponent(TextInformation.class).isPresent()) {
+                return;
+            }
+        }
         entitySystemManager.getEntityManager().createEntity(Assets.getPrefab("notepad:notepad"));
     }
 }

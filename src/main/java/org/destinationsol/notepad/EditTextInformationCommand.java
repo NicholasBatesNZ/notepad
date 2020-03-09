@@ -15,8 +15,6 @@
  */
 package org.destinationsol.notepad;
 
-import com.google.common.collect.Iterators;
-import org.destinationsol.assets.Assets;
 import org.destinationsol.common.In;
 import org.destinationsol.entitysystem.EntitySystemManager;
 import org.destinationsol.game.console.annotations.Command;
